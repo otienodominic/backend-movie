@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const db = require('./db')
+const movieRouter = require('./routes/movie-router')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ app.get('/', (req, res, next) => {
     res.send('Hello World this is Dominic\'s space!!')
     
 })
+app.use('/api', movieRouter);
 
 // Create a server
 
